@@ -1,9 +1,6 @@
 import { useState } from 'react';
-import useGrid from './useGrid'; // Import the useGrid hook
 
-const ControlCells = () => {
-  const { width, height, setWidth, setHeight } = useGrid(); // Use the useGrid hook
-
+const ControlCells = ({ width, height, setWidth, setHeight }) => {
   const [newWidth, setNewWidth] = useState(width);
   const [newHeight, setNewHeight] = useState(height);
 
