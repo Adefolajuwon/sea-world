@@ -25,12 +25,17 @@ const useGrid = (initialWidth = 10, initialHeight = 10) => {
   const toggleCell = (rowIndex, colIndex) => {
     setGrid((prevGrid) =>
       prevGrid.map((row, rIndex) =>
-        row.map((cell, cIndex) => (rIndex === rowIndex && cIndex === colIndex ? !cell : cell))
+        row.map((filled, cIndex) => (rIndex === rowIndex && cIndex === colIndex ? !filled : filled))
       )
     );
   };
 
-  return { grid, width, height, setWidth, setHeight, toggleCell };
+    const countFilledCells = () => {
+      return grid.flat().filter((cell) => cell).length;
+    };
+    
+
+  return { grid, width, height, setWidth, setHeight, toggleCell, countFilledCells };
 };
 
 export default useGrid;
