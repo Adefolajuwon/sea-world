@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { createGrid } from '../../../utils/GridUtils';
+import { createGrid,  toggleCell as toggleCellUtil } from '../../../utils/GridUtils';
 import useIslandCounter from './UseIsland';
 
 const useGrid = (initialWidth = 10, initialHeight = 10) => {
@@ -7,7 +7,7 @@ const useGrid = (initialWidth = 10, initialHeight = 10) => {
   const [height, setHeight] = useState(initialHeight);
   const [grid, setGrid] = useState(createGrid(width, height));
 
-  const { countIslands } = useIslandCounter(grid);
+  const countIslands  = useIslandCounter(grid);
 
   useEffect(() => {
     setGrid((prevGrid) => {
@@ -22,11 +22,7 @@ const useGrid = (initialWidth = 10, initialHeight = 10) => {
   }, [width, height]);
 
   const toggleCell = (rowIndex, colIndex) => {
-    setGrid((prevGrid) =>
-      prevGrid.map((row, rIndex) =>
-        row.map((filled, cIndex) => (rIndex === rowIndex && cIndex === colIndex ? !filled : filled))
-      )
-    );
+    setGrid((prevGrid) => toggleCellUtil(prevGrid, rowIndex, colIndex));
   };
 
   const countFilledCells = () => {
