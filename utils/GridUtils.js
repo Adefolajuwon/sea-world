@@ -3,7 +3,7 @@ export const createGrid = (width, height) => {
   };
 
 
-  export const toggleCell = (grid, rowIndex, colIndex) => {
+  export const toggleCellUtil = (grid, rowIndex, colIndex) => {
     return grid.map((row, rIndex) =>
       row.map((filled, cIndex) => (rIndex === rowIndex && cIndex === colIndex ? !filled : filled))
     );

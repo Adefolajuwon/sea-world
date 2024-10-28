@@ -1,8 +1,8 @@
 "use client";
-import Grid from './components/Grid';
+import World from "./world/page";
 const MainPage = () => {
   return (
-    <Grid/>
+    <World/>
   );
 };
 

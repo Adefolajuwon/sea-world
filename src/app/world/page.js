@@ -1,13 +1,16 @@
 // World.js
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import CellCount from '../components/CellCount';
 import Grid from '../components/Grid';
 import IslandCounter from '../components/IslandCounter';
 import ControlCells from '../components/ControlCells';
+import useIslandCounter from '../hooks/UseIsland';
+import useGrid from '../hooks/UseGrid';
 
 const World = () => {
-  const { grid, width, height, toggleCell, countFilledCells, countIslands, setWidth, setHeight } = useGrid();
+  const { grid, width, height, toggleCell, countFilledCells, setWidth, setHeight } = useGrid();
+  const countIslands = useIslandCounter(grid); 
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-200">
@@ -19,7 +22,7 @@ const World = () => {
         <Grid grid={grid} width={width} toggleCell={toggleCell} />
         
         <CellCount filledCount={countFilledCells()} />
-        <IslandCounter currentIsland={countIslands()} />
+        <IslandCounter currentIsland={countIslands} />
       </div>
     </div>
   );

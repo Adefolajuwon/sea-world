@@ -9,5 +9,5 @@ const Cell = ({ isFilled, onClick }) => {
     );
   };
   
-  export default Cell;
+export default Cell;
   

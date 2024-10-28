@@ -1,11 +1,26 @@
-// toggleCell.test.js
-
-import { toggleCell } from './useGrid'; // Adjust the import path based on your project structure
-
+// utils/GridUtils.test.js
+import { toggleCellUtil } from "../../../utils/GridUtils";
 describe('toggleCell', () => {
-  test('toggles a cell in the grid', () => {
-    // Mock initial grid
-    const initialGrid = [
+  it('toggles the specified cell from false to true', () => {
+    const grid = [
+      [false, false, false],
+      [false, true, false],
+      [false, false, false],
+    ];
+    const rowIndex = 1;
+    const colIndex = 1;
+    
+    const newGrid = toggleCellUtil(grid, rowIndex, colIndex);
+    
+    expect(newGrid).toEqual([
+      [false, false, false],
+      [false, false, false], // The cell at (1, 1) should be toggled to false
+      [false, false, false],
+    ]);
+  });
+
+  it('toggles the specified cell from true to false', () => {
+    const grid = [
       [false, false, false],
       [false, true, false],
       [false, false, false],
@@ -13,17 +28,21 @@ describe('toggleCell', () => {
     const rowIndex = 1;
     const colIndex = 1;
 
-    // Expected result after toggling
-    const expectedGrid = [
+    const newGrid = toggleCellUtil(grid, rowIndex, colIndex);
+    
+    expect(newGrid).toEqual([
       [false, false, false],
+      [false, false, false], // The cell at (1, 1) should be toggled to false
       [false, false, false],
+    ]);
+    
+    // Toggle again to test toggling back
+    const newGridAgain = toggleCellUtil(newGrid, rowIndex, colIndex);
+    
+    expect(newGridAgain).toEqual([
       [false, false, false],
-    ];
-
-    // Call toggleCell on the grid
-    const updatedGrid = toggleCell(initialGrid, rowIndex, colIndex);
-
-    // Assert the updated grid matches the expected result
-    expect(updatedGrid).toEqual(expectedGrid);
+      [false, true, false], // The cell at (1, 1) should be toggled back to true
+      [false, false, false],
+    ]);
   });
 });

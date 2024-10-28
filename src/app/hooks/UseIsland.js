@@ -47,8 +47,9 @@ const useIslandCounter = (grid) => {
   
       return islandCount;
     };
+    return countIslands();
+
   
-    return { countIslands };
   };
   
   export default useIslandCounter;
