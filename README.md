@@ -162,4 +162,3 @@ describe('createGrid', () => {
 ### Additional Notes
 
 - **UI/UX Notes**: The one-time hover tooltip is intended to aid new users in understanding interaction mechanics.
-- **Future Enhancements**: Consider adding mobile responsiveness, multi-user support, or grid persistence for a richer user experience.
