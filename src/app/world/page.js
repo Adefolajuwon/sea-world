@@ -13,9 +13,9 @@ const World = () => {
   const countIslands = useIslandCounter(grid); 
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-200">
-      <div className="bg-white border border-gray-400 rounded-lg shadow-lg p-6 w-full max-w-2xl">
-        <h1 className="text-center text-pink-500 text-2xl mb-4">My Grid</h1>
+    <div className="flex justify-center items-center min-h-screen bg-gray-800">
+      <div className="bg-gray-900 border border-gray-700 rounded-lg shadow-lg p-6 w-full max-w-2xl">
+        <h1 className="text-center text-pink-400 text-3xl mb-4">My Grid</h1>
         
         <ControlCells width={width} height={height} setWidth={setWidth} setHeight={setHeight} />
         

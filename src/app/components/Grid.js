@@ -1,10 +1,11 @@
+// Grid.js
 "use client";
 import Cell from './Cell';
 
 const Grid = ({ grid, width, toggleCell }) => {
   return (
     <div 
-      className="grid gap-0.5 justify-center mx-auto" 
+      className="grid gap-1 justify-center mx-auto" 
       style={{
         gridTemplateColumns: `repeat(${width}, 30px)`,
       }}
