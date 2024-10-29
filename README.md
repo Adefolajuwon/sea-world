@@ -69,25 +69,23 @@ Ensure you have the following installed:
 
 ### Project Structure
 
-src
+src/
 ├── app/
 │   ├── components/
-│   │   ├── CellCount.js        # Displays filled cell count
-│   │   ├── ControlCells.js     # Allows width and height modification
-│   │   ├── Grid.js             # Renders the grid
-│   │   ├── IslandCounter.js    # Shows the current island count
-│   │   ├── Cell.js             # Individual grid cell component
-│   │   ├── Notification.js     # Displays temporary messages for actions
-│   │   └── UserInstruction.js  # Displays usage instructions overlay
+│   │   ├── CellCount.js          # Displays filled cell count
+│   │   ├── ControlCells.js       # Allows width and height modification
+│   │   ├── Grid.jsx               # Renders the grid
+│   │   ├── IslandCounter.jsx      # Shows the current island count
+│   │   ├── Cell.jsx               # Individual grid cell component
+│   │   ├── Notification.jsx        # Displays temporary messages for actions
+│   │   └── UserInstruction.jsx     # Displays usage instructions overlay
 │   ├── hooks/
-│   │   ├── useGrid.js          # Manages grid, cell toggling, and cell counting
-│   │   └── useIslandCounter.js # Counts distinct islands
-│   └── tests/                  # Contains test files
+│   │   ├── useGrid.jsx            # Manages grid, cell toggling, and cell counting
+│   │   └── useIslandCounter.jsx    # Counts distinct islands
+│   └── tests/                    # Contains test files
 ├── utils/
-│   ├── GridUtils.js            # Utility functions for grid 
-└── App.js                      # Main entry point
-
----
+│   └── GridUtils.jxs              # Utility functions for grid
+└── page.jsx                        # Main entry point
 
 ### Detailed Components
 
