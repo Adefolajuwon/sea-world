@@ -5,8 +5,8 @@ import CellCount from '../components/CellCount';
 import Grid from '../components/Grid';
 import IslandCounter from '../components/IslandCounter';
 import ControlCells from '../components/ControlCells';
-import useIslandCounter from '../hooks/UseIsland';
-import useGrid from '../hooks/UseGrid';
+import useIslandCounter from '../hooks/useIslandHook';
+import useGrid from '../hooks/useGridHook';
 import Notification from '../components/Notification';
 import UserInstructions from '../components/UserInstruction';
 

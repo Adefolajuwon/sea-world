@@ -1,4 +1,3 @@
-// ControlCells.js
 import { useState } from 'react';
 
 const ControlCells = ({ width, height, setWidth, setHeight }) => {

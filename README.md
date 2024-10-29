@@ -52,9 +52,9 @@ Ensure you have the following installed:
 
 1. **Run the application**:
    ```bash
-   npm start
+   npm run dev
    # or
-   yarn start
+   yarn run dev
    ```
 2. Open the app in your browser:
    ```
@@ -63,30 +63,29 @@ Ensure you have the following installed:
 
 3. **Interacting with the App**:
    - Adjust the grid dimensions by specifying a width and height.
-   - Hover over a cell to see the tooltip. Click a cell to toggle its state.
    - Watch the Cell Count and Island Counter updates as you interact with cells.
 
 ---
 
 ### Project Structure
 
-```
 src
 ├── app/
 │   ├── components/
 │   │   ├── CellCount.js        # Displays filled cell count
-│   │   ├── Grid.js             # Renders the grid
 │   │   ├── ControlCells.js     # Allows width and height modification
-│   │   └── IslandCounter.js    # Shows the current island count
+│   │   ├── Grid.js             # Renders the grid
+│   │   ├── IslandCounter.js    # Shows the current island count
+│   │   ├── Cell.js             # Individual grid cell component
+│   │   ├── Notification.js     # Displays temporary messages for actions
+│   │   └── UserInstruction.js  # Displays usage instructions overlay
 │   ├── hooks/
 │   │   ├── useGrid.js          # Manages grid, cell toggling, and cell counting
 │   │   └── useIslandCounter.js # Counts distinct islands
 │   └── tests/                  # Contains test files
 ├── utils/
-│   ├── GridUtils.js            # Utility functions for grid manipulation
-│   └── GridUtils.test.js       # Tests for utility functions
+│   ├── GridUtils.js            # Utility functions for grid 
 └── App.js                      # Main entry point
-```
 
 ---
 
@@ -117,7 +116,13 @@ src
 - Located in `src/utils/GridUtils.js`.
 - Utility functions such as `createGrid` for creating new grids, and `toggleCellUtil` for toggling cell states based on user actions.
 
+### 7. `UserInstruction`
+
+- Located in `src/app/components/UserInstruction.js`.
+- Provides a one-time splash card for first-time users, giving a brief guide on how to use the app. It appears on the first load and can be dismissed with an "Okay" button.
+- This component helps ensure an intuitive user experience, particularly for users unfamiliar with grid-based interaction.
 ---
+
 
 ### Testing
 
@@ -162,3 +167,8 @@ describe('createGrid', () => {
 ### Additional Notes
 
 - **UI/UX Notes**: The one-time hover tooltip is intended to aid new users in understanding interaction mechanics.
+
+### Style Guide
+
+Refer to the [Style Guide](./styleGuide.md) for details on coding conventions, component styling, and CSS guidelines. Following the Style Guide ensures code consistency and maintainability across the project. 
+
