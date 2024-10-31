@@ -66,26 +66,27 @@ Ensure you have the following installed:
    - Watch the Cell Count and Island Counter updates as you interact with cells.
 
 ---
-
 ### Project Structure
 
+```
 src/
 ├── app/
 │   ├── components/
-│   │   ├── CellCount.js          # Displays filled cell count
-│   │   ├── ControlCells.js       # Allows width and height modification
-│   │   ├── Grid.jsx               # Renders the grid
-│   │   ├── IslandCounter.jsx      # Shows the current island count
-│   │   ├── Cell.jsx               # Individual grid cell component
+│   │   ├── CellCount.js            # Displays filled cell count
+│   │   ├── ControlCells.js         # Allows width and height modification
+│   │   ├── Grid.jsx                # Renders the grid
+│   │   ├── IslandCounter.jsx       # Shows the current island count
+│   │   ├── Cell.jsx                # Individual grid cell component
 │   │   ├── Notification.jsx        # Displays temporary messages for actions
 │   │   └── UserInstruction.jsx     # Displays usage instructions overlay
 │   ├── hooks/
-│   │   ├── useGrid.jsx            # Manages grid, cell toggling, and cell counting
+│   │   ├── useGrid.jsx             # Manages grid, cell toggling, and cell counting
 │   │   └── useIslandCounter.jsx    # Counts distinct islands
-│   └── tests/                    # Contains test files
+│   ├── tests/                      # Contains test files
 ├── utils/
-│   └── GridUtils.jxs              # Utility functions for grid
+│   └── GridUtils.jsx               # Utility functions for grid
 └── page.jsx                        # Main entry point
+```
 
 ### Detailed Components
 
